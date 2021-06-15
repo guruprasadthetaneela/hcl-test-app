@@ -47,7 +47,8 @@ export class WidgetSummaryComponent implements OnInit {
     if (localStorage.getItem("widget")) {
       widgetDataRef = JSON.parse(localStorage.getItem("widget"));
       if (widgetDataRef.length > 0) widgetDataRef = widgetDataRef.filter((widget) => widget.id !== this.widgetId);
-      localStorage.setItem("widget", JSON.stringify(widgetDataRef))
+      if (widgetDataRef.length > 0) localStorage.setItem("widget", JSON.stringify(widgetDataRef));
+      else localStorage.removeItem("widget");
       this.widgetData = JSON.parse(localStorage.getItem("widget"));
       this.widget.data = {};
       this.widget.showFlag = false;

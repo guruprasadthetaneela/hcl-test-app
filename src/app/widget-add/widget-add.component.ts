@@ -42,7 +42,7 @@ export class WidgetAddComponent implements OnInit {
   }
   onSubmit() {
     // Process checkout data here
-    if (JSON.parse(localStorage.getItem("widget")).length > 0 && JSON.parse(localStorage.getItem("widget")).filter((widget) => widget.name === this.widgetForm.value.name && widget.id !== this.widgetId).length > 0) {
+    if (localStorage.getItem("widget") && JSON.parse(localStorage.getItem("widget")).length > 0 && JSON.parse(localStorage.getItem("widget")).filter((widget) => widget.name === this.widgetForm.value.name && widget.id !== this.widgetId).length > 0) {
       alert("Widget name should be unique");
       return;
     }
