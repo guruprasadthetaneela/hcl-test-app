@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <h2 class="header">Widget add/edit</h2>
+    </div>
+    <div class="row">
+        <form [formGroup]="widgetForm" (ngSubmit)="onSubmit()">
+            <div class="row padd-10px">
+                <div class="col-4">
+                    <label for="name">
+                        Widget
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input id="name" class="form-control" type="text" formControlName="name">
+                </div>
+            </div>
+            <div class="row padd-10px">
+                <div class="col-4">
+                    <label for="address">
+                        Value
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input id="address" class="form-control" onKeyPress="if(this.value.length==5) return false;"
+                        type="number" formControlName="value">
+                </div>
+            </div>
+            <a routerLink="/" class="float-right">Cancel</a>
+            <button class="button float-right" type="submit">Save</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container widget-card">
+    <div class="row">
+        <h2 class="header">Widget summary</h2>
+    </div>
+    <div class="row">
+        <div *ngFor="let widgetInfo of widgetData">
+            <div class="col-6 inline">
+                {{widgetInfo.name}}
+            </div>
+            <div class="col-6 inline">
+                <button class="button float-right" (click)="viewWidget(widgetInfo);">Details</button>
+                <button class="button float-right" (click)="openModel(mymodal,widgetInfo.id)">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #mymodal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Delete confirmation</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        Are you sure want to remove?
+        You will not be able to recover this widget!
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark"
+            (click)="modal.close('Save click');removeWidget();">Ok</button>
+    </div>
+</ng-template>

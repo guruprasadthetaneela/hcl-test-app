@@ -1,0 +1,12 @@
+<div class="">
+    <div class="col-12 inline">
+        <div class="col-6">
+            <app-widget-summary></app-widget-summary>
+            <button (click)="addWidget('')">Add</button>
+        </div>
+        <div class="col-6">
+            <app-widget-details></app-widget-details>
+            <button [disabled]="!widget.data.id" class="float-right" (click)="addWidget(widget.data.id)">Edit</button>
+        </div>
+    </div>
+</div>

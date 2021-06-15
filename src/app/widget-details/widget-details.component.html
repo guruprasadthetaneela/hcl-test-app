@@ -1,0 +1,11 @@
+<div class="container widget-card">
+    <div class="row">
+        <h2 class="header">Widget details</h2>
+    </div>
+    <div class="row bold padding" *ngIf="widget.showFlag">
+        Widget : {{widget.data.name}}
+    </div>
+    <div class="row padding" *ngIf="widget.showFlag">
+        Value : {{convert(widget.data.value)}}
+    </div>
+</div>
